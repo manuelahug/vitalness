@@ -56,7 +56,8 @@ h3 { font-size: 1.25rem; }
   border-bottom: 1px solid var(--line);
 }
 .header-inner { display: flex; align-items: center; justify-content: space-between; gap: 20px; min-height: 76px; }
-.brand { text-decoration: none; line-height: 1.05; }
+.brand { text-decoration: none; line-height: 1.05; display: flex; align-items: center; }
+.brand img { height: 56px; width: auto; }
 .brand-word {
   font-family: var(--font-head); font-style: italic; font-weight: 700;
   font-size: 1.75rem; color: var(--gold-deep); letter-spacing: -0.01em;
@@ -249,4 +250,22 @@ a.card:hover { transform: translateY(-4px); box-shadow: 0 16px 38px -14px rgba(9
   .nav-toggle:checked ~ .nav-burger::after { transform: translateY(-7px) rotate(-45deg); }
   .banner { padding: 28px; }
   .hero .wave { width: 480px; right: -180px; opacity: 0.35; }
+}
+
+/* Bilder */
+.hero-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 48px; align-items: center; }
+.hero-img { width: 100%; height: 100%; max-height: 430px; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow); }
+.treat-img { width: 100%; height: 340px; object-fit: cover; border-radius: var(--radius); box-shadow: var(--shadow); }
+.prose .treat-img { margin-bottom: 1.6rem; }
+.treat-img-contain { object-fit: contain; background: var(--surface); border: 1px solid var(--line); padding: 20px; }
+.img-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 1.6rem; }
+.img-row img { width: 100%; height: 170px; object-fit: cover; border-radius: 12px; box-shadow: var(--shadow); }
+.portrait-img { width: 100%; border-radius: 12px; margin-bottom: 1.2rem; }
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 32px; }
+  .hero-img { max-height: 320px; }
+}
+@media (max-width: 640px) {
+  .img-row { grid-template-columns: 1fr; }
+  .treat-img { height: 240px; }
 }
